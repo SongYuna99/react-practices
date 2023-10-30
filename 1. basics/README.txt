@@ -14,9 +14,9 @@ ex03: 전통적인 DOM기반의 Application -> JS Module System
 
 ex04: 어플리케이션 Bundling(번들링)
 
-ex05:
+ex05: React API 기반의 애플리케이션 리팩토링
 
-ex06:
+ex06: React JSX 기반의 애플리케이션 리팩토링
 
 ex07: ex00.cra Recofiguration (직접 설정)
 

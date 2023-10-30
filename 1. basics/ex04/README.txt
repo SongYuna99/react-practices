@@ -1,4 +1,4 @@
-[ ex03 ]
+[ ex04 ]
 	: 어플리케이션 Bundling
 
 1. webpack은 작게 분리된 많은 애플리케이션 모듈(JS, CSS, scss/sass, images, font)들을
