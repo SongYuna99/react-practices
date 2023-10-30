@@ -2,7 +2,7 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: path.resolve("./src/index.js"),
+  entry: path.resolve("src/index.js"),
   output: {
     path: path.resolve("public"),
     filename: "assets/js/bundle.js",
@@ -10,8 +10,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        test: /\.(c|sa|sc)ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
   },
