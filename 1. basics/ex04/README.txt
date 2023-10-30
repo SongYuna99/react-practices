@@ -11,4 +11,4 @@
 	- test(Mocha, jest) 작업
 	- 난독/압축(uglify) 작업
 	- bundling 
-5. 
+5. js 모듈뿐만 아니라 다양한 에셋(images, css, sass/scss, font)들도 모듈로 취급한다.
