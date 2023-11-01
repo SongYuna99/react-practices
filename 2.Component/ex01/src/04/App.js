@@ -13,7 +13,13 @@ function App() {
         props06={() => {
           return "함수";
         }}
-        props07={true}
+        props07={18}
+        props08={[true, false, false]}
+        props09={{
+          no: 10,
+          name: "마이콜",
+          email: "michol@naver.com",
+        }}
       />
     </div>
   );
