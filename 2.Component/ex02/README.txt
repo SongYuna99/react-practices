@@ -3,9 +3,25 @@
 
 1) inline styling
 2) Normal CSS
+	- css-loader option: {module: false}
+	- 실행
+		> npm run debug src=02 css-module=false
+
 3) CSS Module I
+	- css-loader option: {module: true}
+	- 실행
+		> npm run debug src=03
+
 4) CSS Module II
+	- css-loader option: {module: true}
+	- 실행
+		> npm run debug src=04
+
 5) SASS/SCSS
+	- css-loader option: {module: true}
+	- 실행
+		> npm run debug src=05
+
 6) CSS in JS: Stlyed Component
 7) React Modal
 8) Modal: Material UI
