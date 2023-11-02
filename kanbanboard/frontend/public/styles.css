@@ -28,11 +28,15 @@ ul {
   height: 100%;
 }
 
+/* --- */
+
 .KanbanBoard {
   white-space: nowrap;
   height: 100%;
   margin: 20px auto;
 }
+
+/* --- */
 
 .CardList {
   position: relative;
