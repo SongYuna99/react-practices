@@ -38,7 +38,7 @@
 		> npm init -y	
 		> npm i -D express webpack webpack-cli webpack-dev-server css-loader style-loader sass-loader node-sass babel-loader @babel/core @babel/preset-env @babel/preset-react
 	2) 라이브러리
-		> npm i react react-dom
+		> npm i react react-dom styled-components
 
 2. 설정
 	1) webpack.config.js
