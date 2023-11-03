@@ -1,4 +1,6 @@
-ex05: Component Lifecycle
+[ ex05 ] 
+    : Component Lifecycle
+
 01. Class Component
     01) LifecycleI: mount
         1. constructor
@@ -20,7 +22,8 @@ ex05: Component Lifecycle
         2. After Rendering (componentDidUpdate 대체)
         3. componentDidMount, componentWillUnmount
         4. 변경된 상태에 의존적으로 코드 실행 
-====================================================================================
+
+=====================================================================
 
 1.  설치
     1)  개발툴

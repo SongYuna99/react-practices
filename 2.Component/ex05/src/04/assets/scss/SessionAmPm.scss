@@ -1,5 +1,7 @@
 @media (max-width: 400px) {
-  :global(.Clock) .AmPm div p { font-size: 10px; }
+  :global(.Clock) .AmPm div p {
+    font-size: 10px;
+  }
 }
 
 :global(.clock-display) {
