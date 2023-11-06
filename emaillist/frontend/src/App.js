@@ -3,7 +3,7 @@ import "./assets/scss/App.scss";
 import RegisterForm from "./RegisterForm";
 import SearchBar from "./SearchBar";
 import Emaillist from "./Emaillist";
-// import data from "./assets/json/data";
+// import data from './assets/json/data';
 
 function App() {
   const [emails, setEmails] = useState(null);
@@ -18,15 +18,15 @@ function App() {
   };
 
   const addEmail = async (email) => {
-    fetch('/api',{
-      method: 'post',
+    fetch("/api", {
+      method: "post",
       headers: {
         "Content-Type": "application/json",
-        "Accept": "application/json",
+        Accept: "application/json",
       },
       body: JSON.stringify(email),
     });
-  }
+  };
 
   const fetchList = async () => {
     try {
@@ -34,7 +34,7 @@ function App() {
         method: "get",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json",
+          Accept: "application/json",
         },
         body: null,
       });
@@ -44,11 +44,13 @@ function App() {
       }
 
       const json = await response.json();
-      console.log(json);
 
       if (json.result !== "success") {
         throw new Error(`${json.result} ${json.message}`);
       }
+
+      console.log(json.data);
+      setEmails(json.data);
     } catch (err) {
       console.error(err);
     }
@@ -60,7 +62,7 @@ function App() {
 
   return (
     <div id={"App"}>
-      <RegisterForm />
+      <RegisterForm addEmail={addEmail} />
       <SearchBar searchEmail={searchEmail} />
       {emails === null ? null : <Emaillist emails={emails} />}
     </div>
