@@ -11,7 +11,7 @@ export default class App extends Component {
   }
 
   _getCurrentTime() {
-    const d = new Date();
+    const now = new Date();
     return {};
   }
 
