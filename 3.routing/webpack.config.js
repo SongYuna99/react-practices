@@ -41,6 +41,7 @@ module.exports = function (env) {
       liveReload: true,
       compress: true,
       hot: false,
+      historyApiFallback: true,
     },
   };
 };
