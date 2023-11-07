@@ -1,10 +1,16 @@
 import React from "react";
 import styles from "./assets/scss/SearchBar.scss";
 
-function SearchBar(props) {
+function SearchBar({ fetchEmails }) {
   return (
     <div className={styles.Searchbar}>
-      <input type="text" placeholder="찾기" />
+      <input
+        type="text"
+        placeholder="찾기"
+        onChange={(e) => {
+          fetchEmails(e.target.value);
+        }}
+      />
     </div>
   );
 }
