@@ -8,7 +8,7 @@ import Emaillist from "./Emaillist";
 function App() {
   const [emails, setEmails] = useState(null);
   const searchEmail = (keyword) => {
-    const newEmails = data.filter(
+    const newEmails = emails.filter(
       (email) =>
         email.firstName.indexOf(keyword) !== -1 ||
         email.lastName.indexOf(keyword) !== -1 ||
@@ -18,17 +18,33 @@ function App() {
   };
 
   const addEmail = async (email) => {
-    fetch("/api", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(email),
-    });
+    try {
+      const response = await fetch("/api", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(email),
+      });
+
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
+
+      const json = await response.json();
+
+      if (json.result !== "success") {
+        throw new Error(`${json.result} ${json.message}`);
+      }
+
+      setEmails([json.data, ...emails]);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
-  const fetchList = async () => {
+  const fetchEmails = async (keword) => {
     try {
       const response = await fetch("/api", {
         method: "get",
@@ -57,7 +73,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetchList();
+    fetchEmails();
   }, []);
 
   return (
