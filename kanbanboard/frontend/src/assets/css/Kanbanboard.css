@@ -1,7 +1,5 @@
-:global(.App) {
-  .KanbanBoard {
-    white-space: nowrap;
-    height: 100%;
-    margin: 20px auto;
-  }
+.KanbanBoard {
+  white-space: nowrap;
+  height: 100%;
+  margin: 20px auto;
 }
