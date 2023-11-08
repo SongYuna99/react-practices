@@ -8,8 +8,9 @@ export default function App() {
 
   useEffect(() => {
     window.addEventListener("hashchange", handlerHashChange);
+
     return () => {
-      window.removeEventListener(handlerHashChange);
+      window.removeEventListener("hashchange", handlerHashChange);
     };
   }, []);
 
@@ -22,9 +23,9 @@ export default function App() {
     switch (route) {
       case "/":
         return <Main />;
-      case "guestbook":
+      case "/guestbook":
         return <Guestbook />;
-      case "gallery":
+      case "/gallery":
         return <Gallery />;
       default:
         return null;

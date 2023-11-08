@@ -4,12 +4,27 @@ import Gallery from "./component/Gallery";
 import Guestbook from "./component/Guestbook";
 
 export default function App() {
-  const [route, setRoute] = useState({ page: "/" });
+  const [route, setRoute] = useState({
+    page: window.location.href.substring(window.location.href.lastIndexOf("/")),
+  });
+
+  useEffect(() => {
+    const handlePopState = (e) => {
+      setRoute(e.state);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
 
   const handleLinkClick = (e) => {
     e.preventDefault();
 
     const url = e.target.href.substring(e.target.href.lastIndexOf("/"));
+    console.log(url);
     window.history.pushState({ page: url }, e.target.text, url);
     setRoute({ page: url });
   };
@@ -53,13 +68,10 @@ export default function App() {
       {(() => {
         switch (route.page) {
           case "/":
-            console.log("main");
             return <Main />;
-          case "guestbook":
-            console.log("guestbook");
+          case "/guestbook":
             return <Guestbook />;
-          case "gallery":
-            console.log("gallery");
+          case "/gallery":
             return <Gallery />;
           default:
             return null;
