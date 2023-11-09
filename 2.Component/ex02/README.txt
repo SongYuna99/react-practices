@@ -29,6 +29,8 @@
 		> npm run debug src=05
 
 7) React Modal
+	> npm i react-Modal
+	
 8) Modal: Material UI
 
 ===================================================================
