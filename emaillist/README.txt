@@ -12,7 +12,7 @@
 
 3-1. deploy: ssh 연결(ssh key 인증)
 	1) key 생성하기
-		# ssh-keygen -t rsa -b 2048 -m PEM -C "kickscar@gmail.com"
+		# ssh-keygen -t rsa -b 2048 -m PEM -C "thddbsk7248@gmail.com"
 
 	2) key 생성 확인
 		- private key(개인키): ~/.ssh/id_rsa
@@ -24,7 +24,7 @@
 	4) private key 잘 저장하기
 
 	5) 접속 테스트
-			# ssh -i mykey.pem root@192.168.0.172
+			# ssh -i mykey.pem root@192.168.0.186
 	6) 접속 연결
 			~/.ssh/environment
 			=======
